@@ -1,0 +1,36 @@
+-> resume checker (builder----> extended version)
+-> user will upload their resume-> will get two options to view score (general or by uploading JD)
+-> and all the mistakes will be told to the user
+-> after this user can also generate the modified resume as per the given reviews and make any changes in the content (not the layout)
+-> download pdf of the edited resume
+-> heatmap to highlight the imp points as per the 6 second resume rule
+-> react router dom
+
+OPEN AI api to check the resume for any technical or grammatical errors
+
+frontend ->
+react + tailwind + redux + context
+
+-> context -> theme light/dark
+-> how to use google auth0 (api usage)
+-> react-quill
+-> give templates which can be edited by the user
+
+-> testing (unit + integration)
+-> react-d3-speedometer for displaying the score meter
+
+----------------------x----------------------x--------------------x--------------------x----------------------x----------------------x--------------------x--------------------x
+
+---****** in the free workshop ******---
+
+-> teach the importance of :
+    folder structure
+    constants file
+    theme in tailwind
+
+-> tailwind 4 installation 
+-> react hooks (useState, useEffect)
+-> uploading resume
+-> open AI Api to check & give score and insights
+
+
