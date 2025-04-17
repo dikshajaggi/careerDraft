@@ -1,10 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 import TemplateOne from '../components/TemplateOne'
+import ResumeBuilderForm from '../components/ResumeBuilderForm'
+import { sampleResumeData } from '../static/sampleResumeData';
 
 const BuildResume = () => {
+  const [resumeData, setResumeData] = useState(sampleResumeData);
+
+  const handlePrint = () => {
+    window.print();
+  };
+
   return (
-    <div>
-      <TemplateOne />
+    <div className='mb-4'>
+      <h1 className="text-3xl md:text-4xl font-bold text-center mb-4">Resume Builder</h1>
+      
+      {/* Print Button */}
+      <div className="text-center mb-4">
+        <button
+          onClick={handlePrint}
+          className="bg-primary text-white px-4 py-2 rounded hover:bg-primary-hover transition cursor-pointer"
+        >
+          Print Resume
+        </button>
+      </div>
+
+      <div className="flex flex-col justify-evenly items-start sm:flex-row gap-4">
+        <ResumeBuilderForm onChange={setResumeData} />
+        <TemplateOne data={resumeData} />
+
+      </div>
     </div>
   )
 }

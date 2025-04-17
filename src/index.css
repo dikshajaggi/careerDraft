@@ -27,3 +27,34 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Hide everything except the resume when printing */
+@media print {
+  @page{
+    margin-top: 0 ;
+    margin-bottom: 0;
+  }
+  body * {
+    visibility: hidden;
+  }
+  
+  .print-content, .print-content * {
+    visibility: visible;
+  }
+
+  .print-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  /* Optional: Hide other elements like the navbar, form, etc. */
+  .no-print {
+    display: none;
+  }
+}
+
+
+.input {
+  @apply w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+}

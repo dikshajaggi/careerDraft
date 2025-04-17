@@ -6,19 +6,19 @@
 -> heatmap to highlight the imp points as per the 6 second resume rule
 -> react router dom
 
-OPEN AI api to check the resume for any technical or grammatical errors
+Gemini api to check the resume for any technical or grammatical errors
 
 frontend ->
 react + tailwind + redux + context
 
--> context -> theme light/dark
+-> context -> storing data like (analysis, loading)
+-> redux - dark/light theme
 -> how to use google auth0 (api usage)
 -> react-quill
 -> give templates which can be edited by the user
-
+-> learn how to implement print technique using window.print and print media queries
 -> testing (unit + integration)
 -> react-d3-speedometer for displaying the score meter
-
 ----------------------x----------------------x--------------------x--------------------x----------------------x----------------------x--------------------x--------------------x
 
 ---****** in the free workshop ******---
@@ -31,6 +31,9 @@ react + tailwind + redux + context
 -> tailwind 4 installation 
 -> react hooks (useState, useEffect)
 -> uploading resume
--> open AI Api to check & give score and insights
+-> Gemini Api to check & give score and insights
 
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+This Is What Recruiters Look At In The 6 Sec They Spend On Each Resume

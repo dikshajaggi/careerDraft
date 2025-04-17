@@ -7,7 +7,7 @@ export const sampleResumeData = {
       contact: {
         email: "john@example.com",
         phone: "+91-9999999999",
-        location: "Bangalore, India",
+        location: "https://www.linkedin.com/in/john-doe/",
       },
     },
     skills: ["React", "JavaScript", "Tailwind CSS", "Git", "Redux"],
@@ -24,6 +24,24 @@ export const sampleResumeData = {
         duration: "Jul 2021 - Dec 2021",
         details: "Worked on landing pages, fixed UI bugs, and implemented SEO improvements.",
       },
+      {
+        role: "Frontend Developer",
+        company: "TechCorp",
+        duration: "Jan 2022 - Present",
+        details: "Built scalable UI components and integrated APIs for real-time dashboards.",
+      },
+      {
+        role: "Frontend Developer",
+        company: "TechCorp",
+        duration: "Jan 2022 - Present",
+        details: "Built scalable UI components and integrated APIs for real-time dashboards.",
+      },
+      {
+        role: "Frontend Developer",
+        company: "TechCorp",
+        duration: "Jan 2022 - Present",
+        details: "Built scalable UI components and integrated APIs for real-time dashboards.",
+      }
     ],
     education: [
       {
