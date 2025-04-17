@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import AnalyzeResume from './pages/AnalyzeResume'
 import BuildResume from './pages/BuildResume'
 import MainLayout from './MainLayout'
+import BuildSpecificResume from './pages/BuildSpecificResume'
 
 const RouteContainer = () => {
   const NotFound = () => {
@@ -23,6 +24,7 @@ const RouteContainer = () => {
               <Route index element={<Home />} /> 
               <Route path="/analyze-resume" element={<AnalyzeResume />} /> 
               <Route path="/build-resume" element={<BuildResume />} /> 
+              <Route path="/build-resume/:id" element={<BuildSpecificResume />} /> 
             </Route>
             <Route path="*" element={<NotFound />} /> 
         </Routes>

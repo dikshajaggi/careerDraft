@@ -1,12 +1,10 @@
 import React from 'react'
 import Button from '../components/Button'
 import heroImage from "../assets/heroImage.png"
-import temp1 from "../assets/temp1.png"
-import temp2 from "../assets/temp2.png"
-import temp3 from "../assets/temp3.png"
 import {cardData} from "../static/cardData"
 import Card from '../components/Card'
 import { Link } from 'react-router-dom'
+import { templates } from '../static/templateData'
 
 const Section1 = () => {
   return (
@@ -58,9 +56,8 @@ const Section3 = () => {
       <h1 className="text-center text-2xl md:text-3xl font-bold">Explore Professional Resume Templates</h1>
       <p className='text-light-text text-sm md:text-base text-center'>Explore a variety of expertly designed resume templates tailored for different industries and career levels</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full bg-primary py-10">
-        <img className="w-full max-w-xs md:max-w-sm h-auto mx-auto" src={temp2} alt="template 2" />
-        <img className="w-full max-w-xs md:max-w-sm h-auto mx-auto" src={temp1} alt="template 1" />
-        <img className="w-full max-w-xs md:max-w-sm h-auto mx-auto" src={temp3} alt="template 3" />
+        {templates.map(item => <Link to = {`/build-resume/${item.id}`}> <img className="w-full max-w-xs md:max-w-sm h-auto mx-auto" src={item.image} alt={item.id} /></Link> 
+        )}
       </div>
   </section>
   )
