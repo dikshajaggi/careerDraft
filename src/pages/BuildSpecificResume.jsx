@@ -13,7 +13,7 @@ const BuildSpecificResume = () => {
     };
 
     return (
-        <div className='mb-4'>
+        <div className='mb-4 dark:bg-dark-bg'>
         <h1 className="text-3xl md:text-4xl font-bold text-center mb-4">Resume Builder</h1>
         
         {/* Print Button */}

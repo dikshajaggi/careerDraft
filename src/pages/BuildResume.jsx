@@ -9,9 +9,9 @@ const BuildResume = () => {
   };
 
   return (
-     <div className="mb-12 px-4 max-w-6xl mx-auto">
-      <h1 className="text-3xl md:text-4xl font-bold text-center mb-2">Resume Builder</h1>
-      <p className="text-center text-gray-600 mb-8">
+     <div className="mb-12 px-4 max-w-6xl mx-auto dark:bg-dark-bg">
+      <h1 className="text-3xl md:text-4xl font-bold text-center mb-2 mt-2">Resume Builder</h1>
+      <p className="text-center text-gray-600 mb-8 dark:text-dark-text">
         Choose one template of your choice and start editing to create your resume in minutes.
       </p>
 

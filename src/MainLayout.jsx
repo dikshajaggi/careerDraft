@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom'
 const MainLayout = () => {
   return (
     <>
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col dark:text-dark-text dark:bg-dark-bg">
       {/* Sticky Header */}
       <Header />
       {/* Main Content (Scrollable) */}

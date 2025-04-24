@@ -53,7 +53,7 @@ const ResumeBuilderForm = ({ onChange }) => {
   };
 
   return (
-    <form className="w-full max-w-2xl space-y-6 overflow-y-auto p-4 bg-white rounded shadow-md text-sm">
+    <form className="w-full max-w-2xl space-y-6 overflow-y-auto p-4 bg-white rounded shadow-md text-sm dark:text-dark-text dark:bg-dark-bg dark:border-white">
       <fieldset>
         <legend className="font-bold text-lg">About</legend>
         <input type="text" placeholder="Name" className="input" onChange={e => handleInputChange('about.name', e.target.value)} />

@@ -13,7 +13,7 @@ const Button = ({text, file, setIsLoading}) => {
   }
 
   return (
-    <button onClick={ file ? () => handleUpload(file, setAnalyzed, setAnalysedResult, setIsLoading )  : handleClick} className='rounded-lg bg-primary text-white text-lg font-semibold  px-6 py-3 cursor-pointer hover:bg-primary-hover'>
+    <button onClick={ file ? () => handleUpload(file, setAnalyzed, setAnalysedResult, setIsLoading )  : handleClick} className='rounded-lg bg-primary dark:bg-primary-dark text-white text-lg font-semibold  px-6 py-3 cursor-pointer hover:bg-primary-hover'>
       {text}
     </button>
   )
