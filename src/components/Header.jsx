@@ -21,7 +21,7 @@ const Header = () => {
           <button className="rounded-lg bg-primary text-white font-semibold px-4 py-2 text-sm sm:text-base hover:bg-primary-hover transition dark:bg-primary-dark">
             Log In
           </button>
-          <button className="p-2 rounded-md hover:bg-gray-100 transition cursor-pointer" onClick={() => dispatch(changeTheme())}>
+          <button className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-500 transition cursor-pointer" onClick={() => dispatch(changeTheme())}>
             {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" /> }
           </button>
         </div>
