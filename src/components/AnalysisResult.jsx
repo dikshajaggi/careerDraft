@@ -35,9 +35,9 @@ const AnalysisResult = () => {
   }, [analysedResult])
 
   return (
-    <div className="w-full max-w-5xl mx-auto px-6 py-10 dark:text-dark-text dark:bg-dark-bg">
+    <div className="w-full max-w-5xl mx-auto px-6 py-10">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Resume Analysis Result</h2>
-      <p className="text-gray-600 text-center mb-10">
+      <p className="text-gray-600 text-center mb-10 dark:text-dark-text">
         Here's a breakdown of your resume's performance and personalized recommendations.
       </p>
 
@@ -58,7 +58,7 @@ const AnalysisResult = () => {
 
       {/* Summary Section */}
       {summary && (
-        <div className="bg-blue-50 rounded-xl shadow p-6 mb-10">
+        <div className="bg-blue-50 rounded-xl shadow p-6 mb-10 dark:text-gray-700">
           <h3 className="text-2xl font-semibold mb-3">📝 Summary</h3>
           <p className="text-gray-700 mb-2"><strong>Overall:</strong> {summary.overall}</p>
           <p className="text-gray-700"><strong>ATS Suitability:</strong> {summary.atsSuitability}</p>
@@ -68,11 +68,11 @@ const AnalysisResult = () => {
       {/* Scoring Breakdown */}
       {breakdown && (
         <div className="bg-white rounded-xl shadow-md p-6 mb-10">
-          <h3 className="text-2xl font-semibold mb-4">📊 Scoring Breakdown</h3>
+          <h3 className="text-2xl font-semibold mb-4 dark:text-gray-700">📊 Scoring Breakdown</h3>
           <ul className="space-y-4">
             {Object.entries(breakdown).map(([key, value]) => (
               <li key={key} className="border-b pb-2">
-                <p className="font-medium capitalize">{key.replace(/([A-Z])/g, ' $1')}</p>
+                <p className="font-medium capitalize dark:text-gray-700">{key.replace(/([A-Z])/g, ' $1')}</p>
                 <p className="text-sm text-gray-600">Marks: {value.marks}</p>
                 <p className="text-sm text-gray-700">Advice: {value.advice}</p>
               </li>
@@ -84,8 +84,8 @@ const AnalysisResult = () => {
       {/* Section Feedback */}
       {sectionFeedback && (
         <div className="bg-white rounded-xl shadow-md p-6 mb-10">
-          <h3 className="text-2xl font-semibold mb-4">📌 Section Feedback</h3>
-          <ul className="space-y-3">
+          <h3 className="text-2xl font-semibold mb-4 dark:text-gray-700">📌 Section Feedback</h3>
+          <ul className="space-y-3 dark:text-gray-700">
             {Object.entries(sectionFeedback).map(([section, feedback]) => (
               <li key={section}>
                 <p><span className="font-medium capitalize">{section}:</span> {feedback}</p>
@@ -98,7 +98,7 @@ const AnalysisResult = () => {
       {/* Improvements */}
       {improvements && (
         <div className="bg-white rounded-xl shadow-md p-6 mb-10">
-          <h3 className="text-2xl font-semibold mb-4">🛠️ Section-wise Improvements</h3>
+          <h3 className="text-2xl font-semibold mb-4 dark:text-gray-700">🛠️ Section-wise Improvements</h3>
           <div className="space-y-6">
             {Object.entries(improvements).map(([section, suggestions]) => (
               <div key={section}>
