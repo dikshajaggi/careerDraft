@@ -5,6 +5,7 @@ import { MainContext } from '../utils/MainContext'
 const AnalysisResult = () => {
   const { analysedResult } = useContext(MainContext)
 
+  const [isResume, setIsResume] = useState(true)
   const [score, setScore] = useState(0)
   const [improvements, setImprovements] = useState(null)
   const [sectionOrder, setSectionOrder] = useState([])
@@ -16,6 +17,13 @@ const AnalysisResult = () => {
   useEffect(() => {
     if (analysedResult) {
       setScore(parseInt(analysedResult.finalScore))
+     if (analysedResult.isResume === false) {
+      setIsResume(false) 
+      setScore(0)
+      setSummary(analysedResult.analysisResult)
+      setSectionOrder("Not a resume")
+      isCorrectOrder(false)
+     }
       setIsCorrectOrder(analysedResult.sectionOrderValidation?.isCorrect)
       setSectionOrder(analysedResult.sectionOrderValidation?.suggestedOrder)
       setImprovements(analysedResult.improvementTips)
@@ -107,10 +115,10 @@ const AnalysisResult = () => {
 
       {/* Section Order Validation */}
       <div className={`rounded-lg px-6 py-4 mb-10 ${isCorrectOrder ? "bg-green-100 text-green-800" : "bg-yellow-100 text-yellow-800"}`}>
-        <h4 className="text-lg font-medium mb-1">Section Order</h4>
+        <h4 className="text-lg font-medium mb-1">{isResume ? "Section Order" : "Insights"}</h4>
         <p>{isCorrectOrder
-          ? "✅ Your resume sections are in the correct order."
-          : `⚠️ Recommended order: ${sectionOrder?.join(', ')}`}</p>
+          ? "✅ Your resume sections are in the correct order." :
+          isResume ? `⚠️ Recommended order: ${sectionOrder?.join(', ')}` :"⚠️Not a Resume"}</p>
       </div>
 
       {/* Download Button */}

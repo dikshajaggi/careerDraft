@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Button from "../components/Button";
 import useLoading from "../hooks/useLoading";
 import resumeloader from "../assets/resumegif.gif"
@@ -9,7 +9,7 @@ import AnalysisResult from "../components/AnalysisResult";
 const AnalyzeResume = () => {
   const [file, setFile] = useState(null);
   const [isLoading, setIsLoading] = useLoading(false)
-  const {analyzed} = useContext(MainContext)
+  const {analyzed, setAnalyzed} = useContext(MainContext)
 
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
@@ -19,6 +19,11 @@ const AnalyzeResume = () => {
       alert("Please upload a valid PDF file.");
     }
   };
+
+  useEffect(() => {
+      setIsLoading(false)
+      setAnalyzed(false)
+  }, [])
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-6 md:px-16 py-10">

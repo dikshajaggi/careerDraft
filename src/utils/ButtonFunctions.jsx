@@ -2,7 +2,16 @@ import pdfToText from "react-pdftotext";
 import run from "./chat";
 
 const prompt = `
-You are an AI Resume Analysis Assistant. I will provide you with the full text of a resume (converted from PDF). Your task is to analyze the resume based on the following structure and criteria:
+You are an AI Resume Analysis Assistant. I will provide you with the full text of a resume (converted from PDF). First and foremost, determine if the provided document is ACTUALLY a resume. A resume typically includes sections like "About/Summary," "Skills," "Experience" (with job titles, companies, and dates), "Education," and optionally "Projects." It focuses on an individual's professional history and qualifications for employment.
+
+If the document clearly follows this structure and contains information relevant to a job application, then proceed to analyze it as a resume based on the following criteria... [rest of your resume analysis prompt]
+
+If the document does NOT resemble a resume in its structure and content (e.g., it's a report, an article, a news piece, etc.), then output the following JSON:
+
+{
+  "isResume": false,
+  "analysisResult": "The provided document is not a resume and cannot be analyzed using resume-specific criteria."
+} if yes then, Your task is to analyze the resume based on the following structure and criteria:
 
 ✅ Expected Section Order & Headings:
 These are the expected sections (not all may be present), and the proper order they should follow:
@@ -66,11 +75,13 @@ function stripMarkdownCodeFence(markdownString) {
 
 export const handleUpload = async (file, setAnalyzed, setAnalysedResult, setIsLoading = () => {} ) => {
     const data = await extractText(file)
+    console.log(data, "dat check")
     setIsLoading(true)
     const result = await run(`${data}. ${prompt}`)
     const removedMarkdown = stripMarkdownCodeFence(result)
     if(result) {
       setAnalysedResult(JSON.parse(removedMarkdown))
+      console.log(JSON.parse(removedMarkdown), "JSON.parse(removedMarkdown)")
       setAnalyzed(true)
       setIsLoading(false)
     }
